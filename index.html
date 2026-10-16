@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your personal digital wardrobe and AI-inspired fashion stylist. Organize clothes and discover new outfit combinations.">
+  <meta name="theme-color" content="#f7f5f0">
+  <title>Closet Muse — Your Personal Style Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">closet<span>muse.</span></a>
+    <nav>
+      <a href="#wardrobe">My Wardrobe</a>
+      <a href="#stylist">Style Studio</a>
+      <a href="#how">How it works</a>
+    </nav>
+    <a href="#wardrobe" class="nav-button">Explore closet ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR CLOSET, REIMAGINED ✳</span>
+        <h1>Less time choosing.<br><em>More time being you.</em></h1>
+        <p>Your personal style studio. Organize the clothes you own, discover new combinations, and make every outfit feel like you.</p>
+        <div class="hero-actions">
+          <a href="#wardrobe" class="primary-button">Explore my wardrobe ↗</a>
+          <a href="#stylist" class="text-button">Meet your stylist ↓</a>
+        </div>
+        <div class="hero-note">
+          <span class="avatars">✦ ♡ ✳</span>
+          <span>A little more style. A little less stress.</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Fashion inspiration featuring stylish outfits">
+          <div class="photo-label">
+            <span>THE DAILY EDIT</span>
+            <strong>Your next favourite look.</strong>
+          </div>
+        </div>
+        <div class="floating-card floating-top">
+          <span>✳</span>
+          <div><strong>Style, simplified</strong><small>Made around you</small></div>
+        </div>
+        <div class="floating-card floating-bottom">
+          <span class="heart">♡</span>
+          <div><strong>Wear what you love</strong><small>Repeat outfits, not stress</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong>01</strong><span>YOUR DIGITAL CLOSET</span></div>
+      <div><strong>02</strong><span>FRESH OUTFIT IDEAS</span></div>
+      <div><strong>03</strong><span>YOUR PERSONAL STYLE</span></div>
+    </section>
+
+    <section class="section" id="wardrobe">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">A HOME FOR YOUR CLOTHES</span>
+          <h2>Your wardrobe, <em>your rules.</em></h2>
+          <p>Collect your pieces in one place and rediscover what you already own.</p>
+        </div>
+        <label class="upload-button">
+          <input type="file" id="imageUpload" accept="image/*" multiple hidden>
+          + Add your clothes
+        </label>
+      </div>
+
+      <div class="wardrobe-tools">
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="All">Everything</button>
+          <button class="filter" data-category="Tops">Tops</button>
+          <button class="filter" data-category="Bottoms">Bottoms</button>
+          <button class="filter" data-category="Dresses">Dresses</button>
+          <button class="filter" data-category="Shoes">Shoes</button>
+          <button class="filter" data-category="Accessories">Accessories</button>
+        </div>
+        <input type="search" id="searchInput" placeholder="Search your closet..." aria-label="Search wardrobe">
+      </div>
+
+      <p class="helper-text">Start with our inspiration pieces or add photos of your own clothes.</p>
+      <div class="clothes-grid" id="clothesGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>No pieces found. Try another search or add your clothes!</p>
+    </section>
+
+    <section class="stylist-section" id="stylist">
+      <div class="stylist-copy">
+        <span class="eyebrow">YOUR PERSONAL STYLE STUDIO ✳</span>
+        <h2>One closet.<br><em>Endless possibilities.</em></h2>
+        <p>Tell us where you're going and what mood you're in. We'll put together a look using pieces from your digital wardrobe.</p>
+        <label for="occasion">WHAT'S THE OCCASION?</label>
+        <select id="occasion">
+          <option value="Everyday">Everyday plans</option>
+          <option value="College">College day</option>
+          <option value="Work">Work or interview</option>
+          <option value="Date">Date night</option>
+          <option value="Party">Party or celebration</option>
+        </select>
+        <label for="mood">YOUR STYLE MOOD</label>
+        <select id="mood">
+          <option value="Minimal">Minimal & effortless</option>
+          <option value="Chic">Chic & polished</option>
+          <option value="Comfort">Comfort first</option>
+          <option value="Bold">Bold & expressive</option>
+        </select>
+        <button id="generateBtn" class="primary-button full-button">Create my outfit ✳</button>
+        <p class="helper-text">Suggestions use the items saved in this demo wardrobe.</p>
+      </div>
+
+      <div class="outfit-result" id="outfitResult">
+        <div class="result-placeholder">
+          <span class="sparkle">✳</span>
+          <h3>Your next look awaits.</h3>
+          <p>Choose your occasion, set your mood, and let the styling begin.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section" id="how">
+      <span class="eyebrow">GET DRESSED, DIFFERENTLY</span>
+      <h2>A simpler way to <em>find your style.</em></h2>
+      <div class="how-grid">
+        <article><span>01 / COLLECT</span><div class="how-icon">♧</div><h3>Build your closet</h3><p>Upload your own clothing photos and keep your favourite pieces organized.</p></article>
+        <article><span>02 / EXPLORE</span><div class="how-icon">✳</div><h3>Try new combinations</h3><p>Mix clothing categories and explore styling ideas for different occasions.</p></article>
+        <article><span>03 / REPEAT</span><div class="how-icon">♡</div><h3>Wear it your way</h3><p>Save the pieces you love and make getting ready feel effortless.</p></article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <span class="eyebrow">YOUR STYLE STORY STARTS HERE</span>
+      <h2>You already have the clothes.<br><em>Let's find the looks.</em></h2>
+      <a href="#wardrobe" class="primary-button">Open your wardrobe ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">closet<span>muse.</span></a>
+    <p>Made for the way you get dressed. ♡</p>
+    <span>© 2026 Closet Muse · Student project</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
